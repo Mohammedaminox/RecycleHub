@@ -1,1 +1,6 @@
-<p>profile works!</p>
+<div class="max-w-md mx-auto mt-10 p-6 bg-white rounded-lg shadow">
+  <h2 class="text-xl font-semibold mb-4">Profil</h2>
+  <p><strong>Nom :</strong> {{ user.name }}</p>
+  <p><strong>Email :</strong> {{ user.email }}</p>
+  <button class="btn" (click)="logout()">Se déconnecter</button>
+</div>
