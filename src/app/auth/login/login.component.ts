@@ -25,7 +25,12 @@ export class LoginComponent {
     if (this.loginForm.valid) {
       const { email, password } = this.loginForm.value;
       if (this.authService.login(email, password)) {
-        this.router.navigate(['/profile']);
+        const user = this.authService.getUser();
+        if(user.role === 'collecteur'){
+          this.router.navigate(['collector-dashboard']);
+        } else {
+          this.router.navigate(['particulier-dashboard'])
+        }
       } else {
         this.errorMessage = 'Email ou mot de passe incorrect';
       }

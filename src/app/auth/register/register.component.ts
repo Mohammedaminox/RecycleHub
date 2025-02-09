@@ -20,7 +20,8 @@ export class RegisterComponent {
       phone: ['', Validators.required],
       birthday: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required]
+      password: ['', Validators.required],
+      role: ['particulier']
     });
   }
 

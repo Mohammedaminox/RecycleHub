@@ -10,6 +10,8 @@ import { Router, RouterModule } from "@angular/router";
   templateUrl: './profile.component.html',
 })
 export class ProfileComponent {
+  private readonly loggedInKey = 'isLoggedIn';
+  private readonly currentUserKey = 'currentUser';
   user: any;
 
   constructor(private authService: AuthService, private router: Router) { // ✅ Inject Router properly
@@ -27,7 +29,8 @@ export class ProfileComponent {
   deleteAccount() {
     if (confirm('Êtes-vous sûr de vouloir supprimer votre compte ? Cette action est irréversible.')) {
       localStorage.removeItem('user');
-      localStorage.removeItem('isLoggedIn');
+      localStorage.removeItem(this.currentUserKey);
+      localStorage.removeItem(this.loggedInKey);
       this.router.navigate(['/register']); // ✅ Ensure Router is injected
     }
   }
