@@ -60,7 +60,6 @@
   </form>
 
   <!-- Login Redirect -->
-  <p class="text-gray-600 text-sm text-center mt-4">
-    Déjà un compte ? <a routerLink="./login" class="text-green-600 font-medium hover:underline">Se connecter</a>
-  </p>
+  <a [routerLink]="['./auth/profile/profile.component']" class="text-green-600 font-medium hover:underline">Se connecter</a>
+
 </div>

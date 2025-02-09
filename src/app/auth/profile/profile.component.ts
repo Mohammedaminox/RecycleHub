@@ -8,7 +8,6 @@ import { Router, RouterModule } from "@angular/router";
   standalone: true,
   imports: [CommonModule, RouterModule], // ✅ Ensure proper imports
   templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent {
   user: any;
